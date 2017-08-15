@@ -1,0 +1,7 @@
+vikrantg
+
+I have created my career homepage using html, css and bootstrap. Layout of webpage is based on bootstrap grid system. Header is created using class jumbotron. Navigation links are also included in this header. Then descriptions are on various rows and divisions. On footer, a form is created asking for some visitor's info submitting nowhere. 
+	I have used various effects from css. Such as colouring, shadowing, resizing, font-changing etc. for text. Google fonts api is also used for different fonts. I fixed the background so foreground floats on it. Images are inserted with rounded corners.
+	Navigations tabs are linked with subheadings on the same page. Table is added using bootstrap library.
+
+Refrences:- https://www.w3schools.com/bootstrap/default.asp , https://www.w3schools.com/html/default.asp , https://www.w3schools.com/css/default.asp. 
