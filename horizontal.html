@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Scroll Horizontally</title>
+<link rel="stylesheet" href="bootstrap.css">
+<link rel="stylesheet" href="styles1.1.css">
+<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+	$('a.panel').click(function () {
+
+		$('a.panel').removeClass('selected');
+		$(this).addClass('selected');
+		
+		current = $(this);
+		
+		$('#wrapper').scrollTo($(this).attr('href'), 800);		
+		
+		return false;
+	});
+
+	$(window).resize(function () {
+		resizePanel();
+	});
+	
+});
+
+function resizePanel() {
+
+	width = $(window).width();
+	height = $(window).height();
+
+	mask_width = width * $('.item').length;
+		
+	$('#debug').html(width  + ' ' + height + ' ' + mask_width);
+		
+	$('#wrapper, .item').css({width: width, height: height});
+	$('#mask').css({width: mask_width, height: height});
+	$('#wrapper').scrollTo($('a.selected').attr('href'), 0);
+		
+}
+
+</script>
+
+<style>
+
+body {
+	height:100%;
+	width:100%;
+	margin:0;padding:0;
+	overflow:hidden;
+}
+
+#wrapper {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;left:0;
+	background-color:#ccc;
+	overflow:hidden;
+}
+
+	#mask {
+		width:500%;
+		height:100%;
+		background-color:#eee;
+	}
+
+	.item {
+		width:20%;
+		height:100%;
+		float:left;
+		background-color:#ddd;
+	}
+	
+	
+	.content {
+		width:100%;
+		height:300px;
+		top:20%;
+		margin:0 auto;
+		background-color:#aaa;
+		position:relative;
+	}
+	
+	.selected {
+		background:#fff;
+		font-weight:700;
+	}
+
+	.clear {
+		clear:both;
+	}
+
+</style>
+</head>
+<body>
+
+
+<div id="wrapper">
+
+	<div id="mask">
+	<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+    			
+    			<ul class="nav navbar-nav">
+      				<li><a href="#item1" class="panel">Home</a></li>
+      				<li><a href="#item2" class="panel">Projects</a></li>
+      				<li><a href="#item3" class="panel">Intersets</a></li>
+      				<li><a href="#item4" class="panel">Contact</a></li>
+    			</ul>
+  			</div>
+		</nav>
+
+		<div id="item1" class="item">
+			<div class="content">
+				<div class="row">
+					<div class="col-md-3">
+						<img class="img-rounded" src="me.jpg" eight="300" width=100%>
+					</div>
+					<div class="col-md-7" >
+					
+						<h2 class="sh">Home</h2>
+						<br>
+						<p class="intro">I'm Vikrant Garg welcomes you to my career homepage. I am a second year student at IIT Bombay pursuing computer science and engineering.</p>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="item2" class="item">
+			
+			<div class="content">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-7">
+						<br>
+						<h2 class="sh">Projects</h2>
+							<ul class="intro">
+								<li>Autonomous Car based on Machine Learning</li>
+								<li>Line follower bot</li>
+								<li>Linear programming problem solver</li>
+							</ul>
+					</div>
+					<div class="col-md-3">
+						<img src="p1.jpg" class="img-rounded" eight="200" width=100%>
+					</div>	
+				</div>
+			</div>
+		</div>
+		
+		<div id="item3" class="item">
+			<div class="content">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-4">
+						<img src="a.jpg" class="img-rounded" eight="200" width=100%>
+					</div>
+					<div class="col-md-6" >
+						<br>
+						<h2 class="sh">Interest</h2>
+						<ul class="intro">
+							<li>Travelling</li>
+							<li>Swimming</li>
+							<li>Food</li>
+							<li>Car Driving</li>
+							<li>Like to play Badminton</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="item4" class="item">
+			
+			<div class="content">
+				<div class="row">
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-7">
+						<br>
+						<h2 class="sh">Contact me:</h2>
+						<table class="table tablehover intro">
+							<tr>
+								<td> Mobile No. </td>
+								<td> 9660351515</td>
+							</tr>
+							<tr>
+								<td>Email@ </td>
+								<td>vikrant1garg@gmail.com</td>
+							</tr>
+							<tr>
+								<td colspan="2">Or meet me at Room No.10,Hostel 5, IIT Bombay</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+	</div>
+</div>
+
+</body>
+</html>

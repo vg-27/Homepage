@@ -1,7 +1,8 @@
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Vikrant Garg @ CSE IITB</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
 		<link rel="stylesheet" href="bootstrap.css">
 		<link rel="stylesheet" href="styles1.1.css">
 		<link href="https://fonts.googleapis.com/css?family=Artifica|Lemonada|Satisfy|Shadows+Into+Light|Ubuntu" rel="stylesheet">
@@ -11,80 +12,80 @@
 			a:hover{
 				text-decoration:none;}
 		</style>
-		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
 		<script>
-			
 
-			$(document).ready(function() {
+$(document).ready(function() {
 
-				$('a.panel').click(function () {
+	$('a.panel').click(function () {
 
-					$('a.panel').removeClass('selected');
-					$(this).addClass('selected');
+		$('a.panel').removeClass('selected');
+		$(this).addClass('selected');
 		
-					current = $(this);
+		current = $(this);
 		
-					$('#wrapper').scrollTo($(this).attr('href'), 800);		
+		$('#wrapper').scrollTo($(this).attr('href'), 800);		
 		
-					return false;
-				});
+		return false;
+	});
 
-				$(window).resize(function () {
-					resizePanel();
-				});
+	$(window).resize(function () {
+		resizePanel();
+	});
 	
-			});
+});
 
-			function resizePanel() {
+function resizePanel() {
 
-				width = $(window).width();
-				height = $(window).height();
+	width = $(window).width();
+	height = $(window).height();
 
-				mask_width = width * $('.item').length;
+	mask_width = width * $('.item').length;
 		
-				$('#debug').html(width  + ' ' + height + ' ' + mask_width);
+	$('#debug').html(width  + ' ' + height + ' ' + mask_width);
 		
-				$('#wrapper, .item').css({width: width, height: height});
-				$('#mask').css({width: mask_width, height: height});
-				$('#wrapper').scrollTo($('a.selected').attr('href'), 0);
+	$('#wrapper, .item').css({width: width, height: height});
+	$('#mask').css({width: mask_width, height: height});
+	$('#wrapper').scrollTo($('a.selected').attr('href'), 0);
 		
-			}
-		</script>
+}
+
+</script>
 	</head>
 	<body>
 
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default navbar-fixed-top">
   			<div class="container-fluid">
     			
     			<ul class="nav navbar-nav">
-      				<li><a href="#home">Home</a></li>
-      				<li><a href="#pro">Projects</a></li>
-      				<li><a href="#int">Intersets</a></li>
-      				<li><a href="#con">Contact</a></li>
+      				<li><a href="#home" >Home</a></li>
+      				<li><a href="#pro" >Projects</a></li>
+      				<li><a href="#int" >Intersets</a></li>
+      				<li><a href="#con" >Contact</a></li>
     			</ul>
   			</div>
 		</nav>
 		<!-- <div class="container"> -->
 			<!-- <div class="jumbotron" style="width:100%"> -->
-				<div class="row upperbox">
+				<!-- <div class="row upperbox">
 					<div class="col-md-12">
 						<p class="head"><b>Vikrant Garg</b>
 						<a href="https://www.cse.iitb.ac.in/">
 						<font class="cse"> CSE, IIT Bombay</font></a>
 						</p>
 					</div>
-					
-				</div>
+				</div> -->
 			<!-- </div> -->
 		<!-- </div> -->
 		<div class="wrapper">
 		<div class="mask">
 		<div id="home" class="item">
-		
+			
+			<div class="content">
 			<div class="row">
-				<div class="col-md-1">
-				</div>	
+				<!-- <div class="col-md-1">
+				</div>	 -->
 				<div class="col-md-3">
 					<img class="img-rounded" src="me.jpg" eight="300" width=100%>
 				</div>
@@ -95,22 +96,21 @@
 					<p class="intro">I'm Vikrant Garg welcomes you to my career homepage. I am a second year student at IIT Bombay pursuing computer science and engineering.</p>
 					<br><br>
 				</div>
-				<div class="col-md-1">
-				</div>
+				<!-- <div class="col-md-1">
+				</div> -->
+			</div>
 			</div>
 		</div>
 		
 
-		<div class="row">
-			<div class="col-md-12">
-				<br><br>
-			</div>
-		</div>
-		<div class="container">
+		
+		<div class="item" id="pro">
+			
+			<div class="content">
 			<div class="row">
 				<div class="col-md-1">
 				</div>
-				<div class="col-md-7" id="pro">
+				<div class="col-md-7">
 					<br>
 					<h2 class="sh">Projects</h2>
 						<ul class="intro">
@@ -123,20 +123,19 @@
 					<img src="p1.jpg" class="img-rounded" eight="200" width=100%>
 				</div>	
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<br><br>
 			</div>
 		</div>
-		<div class="container">
+		
+		<div class="item" id="int">
+			
+			<div class="content">
 			<div class="row">
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-4">
 					<img src="a.jpg" class="img-rounded" eight="200" width=100%>
 				</div>
-				<div class="col-md-6" id="int">
+				<div class="col-md-6" >
 					<br>
 					<h2 class="sh">Interest</h2>
 					<ul class="intro">
@@ -145,19 +144,19 @@
 						<li>Food</li>
 						<li>Car Driving</li>
 						<li>Like to play Badminton</li>
+					</ul>
 				</div>
 			</div>
-		</div>	
-		<div class="row">
-			<div class="col-md-12">
-				<br><br>
 			</div>
-		</div>
-		<div class="container">
+		</div>	
+		
+		<div class="item" id="con">
+			
+			<div class="content">
 			<div class="row">
 				<div class="col-md-2">
 				</div>
-				<div class="col-md-7" id="con">
+				<div class="col-md-7">
 					<br>
 					<h2 class="sh">Contact me:</h2>
 					<table class="table tablehover intro">
@@ -169,12 +168,9 @@
 					</table>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<br><br>
 			</div>
 		</div>
+		
 		</div>
 		</div>
 
