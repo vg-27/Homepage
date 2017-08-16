@@ -6,11 +6,51 @@
 		<link rel="stylesheet" href="styles1.1.css">
 		<link href="https://fonts.googleapis.com/css?family=Artifica|Lemonada|Satisfy|Shadows+Into+Light|Ubuntu" rel="stylesheet">
 		<style>
-			body { background-image:url("back.jpg");
+			body { background-color: #006666;
     				background-attachment: fixed;}
 			a:hover{
 				text-decoration:none;}
 		</style>
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+		<script>
+			
+
+			$(document).ready(function() {
+
+				$('a.panel').click(function () {
+
+					$('a.panel').removeClass('selected');
+					$(this).addClass('selected');
+		
+					current = $(this);
+		
+					$('#wrapper').scrollTo($(this).attr('href'), 800);		
+		
+					return false;
+				});
+
+				$(window).resize(function () {
+					resizePanel();
+				});
+	
+			});
+
+			function resizePanel() {
+
+				width = $(window).width();
+				height = $(window).height();
+
+				mask_width = width * $('.item').length;
+		
+				$('#debug').html(width  + ' ' + height + ' ' + mask_width);
+		
+				$('#wrapper, .item').css({width: width, height: height});
+				$('#mask').css({width: mask_width, height: height});
+				$('#wrapper').scrollTo($('a.selected').attr('href'), 0);
+		
+			}
+		</script>
 	</head>
 	<body>
 
@@ -25,27 +65,30 @@
     			</ul>
   			</div>
 		</nav>
-		<div class="container">
-			<div class="jumbotron" style="width:100%">
-				<div class="row">
+		<!-- <div class="container"> -->
+			<!-- <div class="jumbotron" style="width:100%"> -->
+				<div class="row upperbox">
 					<div class="col-md-12">
 						<p class="head"><b>Vikrant Garg</b>
 						<a href="https://www.cse.iitb.ac.in/">
-						<font style="color:#66a3ff;font-family:Lemonada;text-shadow:3px 0px 3px #aaa;font-size:70%">CSE, IIT Bombay</font></a>
+						<font class="cse"> CSE, IIT Bombay</font></a>
 						</p>
 					</div>
 					
 				</div>
-			</div>
-		</div>
-		<div class="container">
+			<!-- </div> -->
+		<!-- </div> -->
+		<div class="wrapper">
+		<div class="mask">
+		<div id="home" class="item">
+		
 			<div class="row">
 				<div class="col-md-1">
 				</div>	
 				<div class="col-md-3">
 					<img class="img-rounded" src="me.jpg" eight="300" width=100%>
 				</div>
-				<div class="col-md-7" id="home">
+				<div class="col-md-7" >
 					<br>
 					<h2 class="sh">Home</h2>
 					<br>
@@ -56,6 +99,8 @@
 				</div>
 			</div>
 		</div>
+		
+
 		<div class="row">
 			<div class="col-md-12">
 				<br><br>
@@ -119,7 +164,7 @@
 					<tr><td> Mobile No. </td><td> 9660351515</td>
 					</tr>
 					<tr>
-					<td>Email@ </td><td>vikrant1garg@gmail.com</td>
+					<td>Email@ </td><td>vikrant1garg@gmail.com</td></tr>
 					<tr><td colspan="2">Or meet me at Room No.10,Hostel 5, IIT Bombay</td></tr>
 					</table>
 				</div>
@@ -130,5 +175,9 @@
 				<br><br>
 			</div>
 		</div>
+		</div>
+		</div>
+
+		
 	</body>
 </html>
